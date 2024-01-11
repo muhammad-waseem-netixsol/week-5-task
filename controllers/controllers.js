@@ -21,7 +21,7 @@ exports.deleteProduct = (req, res, next) => {
         res.status(501).send({ err: "Server is not responding try again later"})
     })
 }; 
-// add {product} api
+// add {product}
 exports.addNewProduct = async (req, res, next) => {
     const {title, price, } = req.body;
     console.log(title, price)
@@ -34,7 +34,6 @@ exports.addNewProduct = async (req, res, next) => {
         title:title,
         image: result.secure_url,
         price:price,
-        
     });
     products.save().then(success => {
         res.status(201).send({msg: "created successfully" });
