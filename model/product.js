@@ -14,6 +14,10 @@ const productSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  creator: {
+    type: mongoose.Types.ObjectId,
+    ref: "User"
+  }
  
 });
 

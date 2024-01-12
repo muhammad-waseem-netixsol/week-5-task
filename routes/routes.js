@@ -7,7 +7,7 @@ const upload = multer();
 const jwt_auth_check = require("../auth-check-mw/auth");
 
 
-router.get("/products",jwt_auth_check ,controllers.getAllProducts);
+router.post("/products",jwt_auth_check ,controllers.getAllProducts);
 
 router.post("/product", jwt_auth_check, upload.single('image'),[ 
     body('title').notEmpty().withMessage('Title is required'),
