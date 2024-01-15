@@ -21,7 +21,7 @@ const { ResultWithContextImpl } = require("express-validator/src/chain");
               return res.status(401).json({ message: 'You have entered wrong password' });
             }
             const token = jwt.sign({ user: user }, 'my-jwt-token-secret', { expiresIn: '1h' });
-            res.status(200).json({ token, message: "Hurrayy!! You are loggedIn." , userId:user._id});
+            res.status(200).json({ token, message: "Hurrayy!! You are loggedIn." , userId:user._id, name:user.name});
           });
       })
       .catch(error => {
